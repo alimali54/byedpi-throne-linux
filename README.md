@@ -1,7 +1,11 @@
 # byedpi-throne-linux
 Linux'da Discord ve Roblox'u ByeDPI ile açmak için Throne kullanımı.
 
-ByeDPI'ın sistem açılışında otomatik açılmasını kod içine yerleştirdim. Throne'u ise kendiniz menüsünden otomatik başlayacak şekilde ayarlayabilirsiniz.
+Video anlatımı izlemeniz faydalı olur. 
+https://youtu.be/8VA1ahFQrys
+
+Videoda Throne açılışa ekleniyor ama ByeDPI'ın açılışa eklenmesini kendiniz halletmelisiniz demiştim, o konuda güncelleme yaptım ve sistem açılışında otomatik açılmasını kod içine yerleştirdim. Artık ByeDPI otomatik başlayacak ve Throne'u ise kendiniz menüsünden otomatik başlayacak şekilde ayarlayabilirsiniz.
+
 ByeDPI'ın otomatik başlatılma ayarını kaldırmak için rm -f ~/.config/autostart/ciadpi.desktop komutunu kullanabilirsiniz.
 
 
