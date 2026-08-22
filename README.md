@@ -39,18 +39,17 @@ EOF
   ) && sed -i "s|DIR|$(pwd)|g" ~/.config/autostart/ciadpi.desktop && chmod +x ~/.config/autostart/ciadpi.desktop && ./run-vf.sh
 ```
 
-## Throne'u programlar listesine ekleme
-Throne, portable(taşınabilir) olarak çalışmakta. Throne'u sistemimizdeki yüklü programların arasına eklemek için Throne'u yüklediğimiz klasöre gidip aşağıdaki komutu çalıştıracağız. Değişiklik yapmadıysanız varsayılan olarak ```~/byedpi_throne_linux/``` klasöründe bulunuyor.
+## Bash aliası ile throne komutu ile çalıştırma
+```~/.bashrc``` dosyasına eklenecek
 ```bash
-cd byedpi_throne_linux/
-
-cat << EOF > ~/.local/share/applications/byedpi-throne.desktop
+alias throne='{ sudo apt install -y unzip libopengl0 || sudo dnf install -y unzip libglvnd-opengl || sudo pacman -S --noconfirm unzip libglvnd || sudo zypper install -y unzip || sudo apk add unzip; } && (wget https://github.com/alimali54/byedpi-throne-linux/releases/download/dosyalar/byedpi_throne_linux.zip || curl -O -L https://github.com/alimali54/byedpi-throne-linux/releases/download/dosyalar/byedpi_throne_linux.zip) && unzip -o byedpi_throne_linux.zip && cd byedpi_throne_linux && chmod +x run.sh run-vf.sh && mkdir -p ~/.config/autostart && (cat << 'EOF' > ~/.config/autostart/ciadpi.desktop
 [Desktop Entry]
-Name=ByeDPI Throne
-Exec=$(pwd)/run.sh
-Icon=utilities-terminal
-Terminal=true
+Exec=DIR/ciadpi -r 1+s
+Icon=
+Name=ciadpi
+Path=DIR
+Terminal=false
 Type=Application
-Categories=Network;
 EOF
+  ) && sed -i "s|DIR|$(pwd)|g" ~/.config/autostart/ciadpi.desktop && chmod +x ~/.config/autostart/ciadpi.desktop && ./run.sh'
 ```
