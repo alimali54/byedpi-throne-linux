@@ -42,7 +42,6 @@ EOF
 ## Terminalden throne komutu ile çalıştırma
 Kullandığınız shellin konfigürasyon dosyasına aşağıdaki komutu ekleyeceğiz. Genellikle bash kullanılır.
 Hangi shelli kullandığınız bilmiyorsanız terminale ```echo $0``` komutunu yazıp çıkan shellin konfigürasyon dosyasını internetten arayabilirsiniz.
-
 vodafone dışındaki ISS'ler için
 ```bash
 alias throne='{ sudo apt install -y unzip libopengl0 || sudo dnf install -y unzip libglvnd-opengl || sudo pacman -S --noconfirm unzip libglvnd || sudo zypper install -y unzip || sudo apk add unzip; } && (wget https://github.com/alimali54/byedpi-throne-linux/releases/download/dosyalar/byedpi_throne_linux.zip || curl -O -L https://github.com/alimali54/byedpi-throne-linux/releases/download/dosyalar/byedpi_throne_linux.zip) && unzip -o byedpi_throne_linux.zip && cd byedpi_throne_linux && chmod +x run.sh run-vf.sh && mkdir -p ~/.config/autostart && (cat << 'EOF' > ~/.config/autostart/ciadpi.desktop
@@ -70,3 +69,5 @@ Type=Application
 EOF
   ) && sed -i "s|DIR|$(pwd)|g" ~/.config/autostart/ciadpi.desktop && chmod +x ~/.config/autostart/ciadpi.desktop && ./run-vf.sh'
 ```
+
+kaydettikten sonra terminali kapatıp tekrar açmanın ardından ```throne``` yazarak test edebilirsiniz.
